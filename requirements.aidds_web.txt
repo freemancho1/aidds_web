@@ -1,0 +1,12 @@
+pandas
+
+# Get model
+joblib
+
+# Utils
+dotmap
+
+# Web service
+Flask
+Flask-RESTful
+tornado
