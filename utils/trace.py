@@ -5,7 +5,7 @@ import traceback
 from aidds_web import config as cfg
 
 
-def get_caller(is_display=False) -> str:
+def get_caller(is_display:bool=False) -> str:
     """ Return function and file info
         When called with 'a() -> b() -> get_caller()',
         - it returns information about the 'a()' function or class.function,
@@ -49,7 +49,7 @@ def get_caller(is_display=False) -> str:
     # return caller_function, caller_file_info
     return caller_function
     
-def get_error(e_msg=None) -> str:
+def get_error(e_msg:any=None) -> str:
     """ Returns the error information that occurred.
 
     Args:
@@ -100,7 +100,7 @@ def get_error(e_msg=None) -> str:
     
     return f'{error_filename}[{error_lineno}]: {error_content}\n{error_message}'
     
-def _get_error_message(error_trace=None) -> str:
+def _get_error_message(error_trace:str=None) -> str:
     """ Returns the error message from the error trace
         using regular expressions. 
         

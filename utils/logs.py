@@ -6,7 +6,7 @@ from aidds_web.utils import get_caller
 from aidds_web.utils import get_error
 
 
-def service_logs(code:str=None, value:Any=None) -> None:
+def service_logs(code:str=None, value:any=None) -> None:
     """ Logs display function for the service section. """
     if not cfg.sys.display_logs:
         return
@@ -16,7 +16,7 @@ def service_logs(code:str=None, value:Any=None) -> None:
     print(display)
     
     
-def route_error_logs(error:Any=None) -> None:
+def route_error_logs(error:any=None) -> None:
     """ Logs display function for the route errors. """
     head_message = msg.exception.sys.head_message
     display = f'\n[{datetime.now()}]'
