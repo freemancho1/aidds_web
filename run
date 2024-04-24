@@ -1,0 +1,19 @@
+#!/home/freeman/projects/aidds_web/venv/bin/python
+import os
+
+from aidds_web import app_init
+from aidds_web import web_args
+from aidds_web import config as cfg
+
+
+def main(service_port=None):
+    print(service_port)
+
+
+if __name__ == '__main__':
+    try:
+        app_init()
+        args = web_args()
+        main(service_port=args.port)
+    except Exception as e:
+        print(e)
