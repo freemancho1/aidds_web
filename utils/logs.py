@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from aidds_web import config as cfg
-from aidds_web import message as msg 
+from aidds_web import messages as msg 
 from aidds_web.utils import get_caller
 from aidds_web.utils import get_error
 

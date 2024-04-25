@@ -4,10 +4,16 @@ import os
 from aidds_web import app_init
 from aidds_web import web_args
 from aidds_web import config as cfg
+from aidds_web.utils import app_exception
+
+from aidds_web.test import mytest
 
 
 def main(service_port=None):
-    print(service_port)
+    try:
+        mytest()
+    except Exception as e:
+        raise app_exception(e)
 
 
 if __name__ == '__main__':
@@ -15,5 +21,7 @@ if __name__ == '__main__':
         app_init()
         args = web_args()
         main(service_port=args.port)
+    except app_exception as ae:
+        ae.print()
     except Exception as e:
         print(e)

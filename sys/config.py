@@ -45,11 +45,36 @@ _file = {
         'model'                 : 'model',
     },
     'ext': {
-        'excel'                 : '.xlsx',
-        'csv'                   : '.csv',
         'pickle'                : '.pkl',
         'model'                 : '.model',
     },
-    'base_path': \
-        os.path.join(os.path.expanduser('~'), 'projects', 'aidds_web', 'xxxx'),
+    'base_path': os.path.join(
+        os.path.expanduser('~'), 
+        'projects', 'aidds_web', 'data'
+    ),
 }
+_pkl = _file['ext']['pickle']
+_model = _file['ext']['model']
+_file.update({
+    # Memory Data
+    'pickle': {
+        'office_codes': 'mem01_office_codes'+_pkl,
+        'pole_one_hot_cols': 'mem02_pole_one_hot_cols'+_pkl,
+        'line_one_hot_cols': 'mem03_line_one_hot_cols'+_pkl,
+        'sl_one_hot_cols': 'mem04_sl_one_hot_cols'+_pkl,
+        'last_pp_cols': 'mem05_last_pp_cols'+_pkl,
+        'modeling_cols': 'mem06_modeling_cols'+_pkl,
+        'scaler': 'mem07_scaler'+_pkl,
+    },
+    # Model Data: 
+    # This model data is stored using joblib instead of pickle
+    'model': f'mem09_model_best'+_model,
+})
+
+
+# Convert dictionary to semi-class
+# - to use attribute assignment, e.g., sys.cond.debug_mode = False
+sys = DotMap(_sys)
+type = DotMap(_type)
+cols = DotMap(_cols)
+file = DotMap(_file)
