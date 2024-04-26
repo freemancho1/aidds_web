@@ -21,4 +21,4 @@ def route_error_logs(error:any=None) -> None:
     head_message = msg.exception.sys.head_message
     display = f'\n[{datetime.now()}]'
     display += f'{head_message}[{get_caller()}]\n{get_error(str(error))}\n'
-    print(display)
+    print(display) 
