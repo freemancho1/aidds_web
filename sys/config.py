@@ -40,12 +40,11 @@ _cols.update({
     'cons': [
         _cols['join'],
         _cols['target'],  
-        'pred_no',
-        'pred_type',
-        'acc_date',   # Remove
+        'pred_id',
+        'pred_seq',
         'office_cd',
-        'cont_cap',
-        'sup_type',
+        'cntr_pwr',
+        'sply_tpcd',
     ]
 })
 
@@ -85,9 +84,8 @@ _file.update({
 
 # Constraints on modeling data
 _constraints = {
-    'acc_type_name'             : '신설(상용/임시)',
-    'max_cont_cap'              : 50,
-    'cons_type_cd'              : 2,
+    'acpt_knd_cd'               : '신설(상용/임시)',
+    'max_cntr_pwr'              : 50,
     'max_total_cons_cost'       : 30000000,
     'min_pole_cnt'              : 0,
     'max_pole_cnt'              : 10,
