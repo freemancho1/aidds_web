@@ -66,7 +66,7 @@ class Preprocessing:
                         # Remove unnecessary columns from return JSON data
                         # - Only CONS data, not in facility data
                         # - Remove except join, cons_cost, pred_no, pred_type
-                        for col in cfg.cols.cons.source.service[4:]:
+                        for col in cfg.cols.cons[4:]:
                             self.return_json[pnid][pkey].pop(col, None)
                     else:
                         # Convert equipment data in JSON format to a list
