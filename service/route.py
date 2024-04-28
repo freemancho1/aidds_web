@@ -23,7 +23,7 @@ class PredictRoute(MethodView):
         
         try:
             ret_json = sm.predict().run(in_json=input_json)
-            return jsonify(ret_json), hc.OK
+            return ret_json, hc.OK
         except HTTPException as he:
             return route_error_handle(f'hc_msg.e{he.code}', None, he.code, he)
         except app_exception as ae:
@@ -52,7 +52,7 @@ class RePredictRoute(MethodView):
             pred_id = next(iter(ret_json))
             cons = ret_json[pred_id].get('cons', {})
             ret_json = json.dumps(cons)
-            return jsonify(ret_json), hc.OK
+            return ret_json, hc.OK
         except HTTPException as he:
             return route_error_handle(f'hc_msg.e{he.code}', None, he.code, he)
         except app_exception as ae:
